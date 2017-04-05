@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
       machine.ssh.forward_agent = true
 
-       machine.vm.synced_folder ".", "/opt/proj", type: "nfs"
+       machine.vm.synced_folder ".", "/opt/proj"#, type: "nfs"
 
       machine.vm.provider :virtualbox do |vb|
         vb.customize ["modifyvm", :id, "--memory", "4096"]
