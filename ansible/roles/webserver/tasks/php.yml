@@ -18,10 +18,11 @@
     - php-intl
     - php-xml
     - php-mbstring
+    - php-xdebug
 
 - name: php.ini settings
   lineinfile:
-    dest: /etc/php/7.1/apache2/php.ini
+    dest: /etc/php/7.2/apache2/php.ini
     line: "{{ item }}"
   with_items: "{{ webserver.php_ini }}"
   notify:

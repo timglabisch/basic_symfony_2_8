@@ -6,7 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.define "proj" do |machine|
-      machine.vm.box = "ubuntu/trusty64"
+      machine.vm.box = "bento/ubuntu-16.04"
 
       machine.vm.network :private_network, ip: "192.168.10.66"
 
@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
       machine.ssh.forward_agent = true
 
-       machine.vm.synced_folder ".", "/opt/proj"#, type: "nfs"
+       machine.vm.synced_folder ".", "/opt/proj", type: "nfs"
 
       machine.vm.provider :virtualbox do |vb|
         vb.customize ["modifyvm", :id, "--memory", "4096"]

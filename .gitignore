@@ -8,3 +8,7 @@
 /build/
 /bin/
 /composer.phar
+vendor/*
+var/*
+*.retry
+.idea/*
